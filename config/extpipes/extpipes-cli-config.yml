@@ -50,7 +50,7 @@ rawdbs:
     dataset-external-id: src:002:opcua:ds
     short-name: opcua
     rawtables:
-      - rawtable-name: assets
+      - rawtable-name: datapoints
         pipelines:
         - source: ice-cream-api
           schedule: On trigger
