@@ -1,7 +1,7 @@
 ---
 # Manifest file downloaded from fusion
-externalId: create asset hierarchy ui
-name: create asset hierarchy ui
+externalId: Create Asset Hierarchy
+name: Create Asset Hierarchy
 query: >-
     SELECT
       external_id AS externalId,

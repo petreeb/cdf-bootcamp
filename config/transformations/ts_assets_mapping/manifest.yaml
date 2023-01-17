@@ -1,7 +1,7 @@
 ---
 # Manifest file downloaded from fusion
-externalId: ts assets mapping ui
-name: ts assets mapping ui
+externalId: Timeseries Assets Mapping
+name: Timeseries Assets Mapping
 query: >-
     SELECT
       ts.externalId AS externalId,
