@@ -45,3 +45,17 @@ rawdbs:
               email: ben.petree@cognite.com
               role: Bootcamp Administrator
               send-notification: false
+
+  - rawdb-name: src:002:opcua:db
+    dataset-external-id: src:002:opcua:db
+    short-name: opcua
+    rawtables:
+      - rawtable-name: assets
+        pipelines:
+        - source: ice-cream-api
+          schedule: On trigger
+          contacts:
+            - name: Ben P
+              email: ben.petree@cognite.com
+              role: Bootcamp Administrator
+              send-notification: false
