@@ -4,6 +4,8 @@ name: Deploy transformations
 on:
     push:
         branches: [main]
+        paths:
+            - config/transformations/**
 
 jobs:
     deploy:
