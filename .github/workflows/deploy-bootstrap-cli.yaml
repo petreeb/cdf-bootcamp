@@ -50,5 +50,3 @@ jobs:
         with:
           # Path to Bootstrap CLI configuration file
           config_file: ./config/bootstrap/bootstrap-cli-config.yml
-      # "yes"|"no" deploy with special groups and aad_mappings
-      #with_special_groups: "yes"
