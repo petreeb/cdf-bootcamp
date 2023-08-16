@@ -1,4 +1,5 @@
 # Enablement Bootstrap
+
 Configuration and transformations for Cognite bootcamp example
 
 CDF Bootstrap configuration:

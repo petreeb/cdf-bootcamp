@@ -3,36 +3,36 @@
 externalId: Create Asset Hierarchy
 name: Create Asset Hierarchy
 query: >-
-    SELECT
-      external_id AS externalId,
-      IF(
-        parent_external_id = ''
-        OR parent_external_id IS NULL,
-        '',
-        parent_external_id
-      ) AS parentExternalId,
-      name AS name,
-      json_tuple(metadata, 'site', 'type', 'cycle time', 'Function', 'src', 'Machine type') AS (site, type, cycle_time, function, src, machine_type),
-      to_metadata(site, type, cycle_time, function, src, machine_type) AS metadata,
-      description AS description,
-      'from RAW' AS source,
-      dataset_id('src:001:sap:ds') AS dataSetId
-    FROM
-      `src:001:sap:db`.assets
+  SELECT
+    external_id AS externalId,
+    IF(
+      parent_external_id = ''
+      OR parent_external_id IS NULL,
+      '',
+      parent_external_id
+    ) AS parentExternalId,
+    name AS name,
+    json_tuple(metadata, 'site', 'type', 'cycle time', 'Function', 'src', 'Machine type') AS (site, type, cycle_time, function, src, machine_type),
+    to_metadata(site, type, cycle_time, function, src, machine_type) AS metadata,
+    description AS description,
+    'from RAW' AS source,
+    dataset_id('src:001:sap:ds') AS dataSetId
+  FROM
+    `src:001:sap:db`.assets
 destination:
-    type: asset_hierarchy
+  type: asset_hierarchy
 ignoreNullFields: true
 shared: true
 action: upsert
 schedule:
-    interval: 0 * * * *
-    isPaused: true
+  interval: 0 * * * *
+  isPaused: true
 dataSetExternalId: src:001:sap:ds
 authentication:
-    clientId: ${COGNITE_CLIENT_ID}
-    clientSecret: ${COGNITE_CLIENT_SECRET}
-    tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
+  clientId: ${COGNITE_CLIENT_ID}
+  clientSecret: ${COGNITE_CLIENT_SECRET}
+  tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
   # Optional: If idP requires providing the scopes
-    cdfProjectName: ${CDF_PROJECT_NAME}
-    scopes:
-        - https://westeurope-1.cognitedata.com/.default
+  cdfProjectName: ${CDF_PROJECT_NAME}
+  scopes:
+    - https://westeurope-1.cognitedata.com/.default
