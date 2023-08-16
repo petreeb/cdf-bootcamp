@@ -15,6 +15,7 @@ bootstrap:
 
     # default and recommended is: true
     with-raw-capability: true
+    with-datamodel-capability: false
 
     # new in v2 to configure prior (v1) hard-coded naming elements
     # Most of the naming-configurations don't have a functional effect, but affect
